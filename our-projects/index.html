@@ -560,24 +560,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
     </script>
 
-  
-<!-- ========== TESTIMONIALS SECTION (شهادات العملاء) ========== -->
-    <section id="testimonials" class="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <!-- خلفية ديكورية متحركة -->
+   
+
+
+  <!-- ========== PROJECTS SECTION (مشاريعنا) - قسم كبير وشامل ========== -->
+    <section id="projects" class="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <!-- خلفية ديكورية -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-secondary/3 to-primary/3 rounded-full blur-3xl"></div>
+            <div class="absolute top-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
         </div>
 
         <div class="container mx-auto px-6 lg:px-12 relative z-10">
             <!-- عنوان القسم المتطور -->
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <div class="inline-block">
                     <div class="flex items-center justify-center gap-2 mb-3">
                         <div class="w-8 h-px bg-secondary"></div>
                         <span class="text-secondary font-bold text-lg tracking-wider relative">
-                            شهادات العملاء
+                            مشاريعنا
                             <svg class="absolute -bottom-2 left-0 w-full" height="3" viewBox="0 0 200 3" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 1.5 Q50 4.5 100 1.5 Q150 -1.5 200 1.5" stroke="#f39c12" fill="none" stroke-width="2"/>
                             </svg>
@@ -586,627 +587,616 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <h2 class="text-3xl md:text-5xl font-bold text-primary mt-4 mb-4">
-                    ماذا يقول
+                    أحدث
                     <span class="text-secondary relative inline-block mx-2">
-                        عملاؤنا عنا
+                        إنجازاتنا
                         <svg class="absolute -bottom-2 left-0 w-full" height="4" viewBox="0 0 200 4" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 2 Q50 6 100 2 Q150 -2 200 2" stroke="#f39c12" fill="none" stroke-width="2"/>
                         </svg>
                     </span>
                 </h2>
                 <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-                    نفخر بثقة عملائنا الذين جربوا خدماتنا وكانوا خير سفراء لنا
+                    نفتخر بتقديم أفضل المشاريع التي تعكس جودة عملنا واحترافيتنا
                 </p>
             </div>
 
-            <!-- سلايدر الشهادات -->
-            <div class="relative max-w-6xl mx-auto">
-                <!-- أزرار التنقل -->
-                <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-20 bg-white hover:bg-secondary shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 group">
-                    <svg class="w-6 h-6 text-secondary group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                    </svg>
+            <!-- فلتر المشاريع -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="filter-btn active px-6 py-2 rounded-full bg-secondary text-white font-semibold transition-all duration-300 hover:shadow-lg" data-filter="all">
+                    الكل
                 </button>
-                <button id="nextBtn" class="absolute right-0 top-1/2 transform translate-y-1/2 translate-x-4 lg:translate-x-12 z-20 bg-white hover:bg-secondary shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 group">
-                    <svg class="w-6 h-6 text-secondary group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition-all duration-300" data-filter="residential">
+                    مشاريع سكنية
                 </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition-all duration-300" data-filter="commercial">
+                    مشاريع تجارية
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition-all duration-300" data-filter="finishing">
+                    تشطيبات وديكور
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition-all duration-300" data-filter="consulting">
+                    استشارات هندسية
+                </button>
+            </div>
 
-                <!-- حاوية البطاقات -->
-                <div class="overflow-hidden">
-                    <div id="testimonialSlider" class="flex transition-transform duration-700 ease-in-out">
-                        
-                        <!-- الشهادة 1 -->
-                        <div class="flex-shrink-0 w-full px-4">
-                            <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 md:p-10 relative overflow-hidden">
-                                <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
-                                <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
-                                
-                                <!-- علامة الاقتباس -->
-                                <div class="absolute top-6 right-6 opacity-10">
-                                    <svg class="w-16 h-16 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                    </svg>
+            <!-- شبكة المشاريع (Masonry Grid) -->
+            <div class="projects-grid">
+                <!-- المشروع 1 - سكني فاخر -->
+                <div class="project-item residential wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="فيلا فاخرة في الرياض" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-secondary text-xs px-2 py-1 rounded-full">مشروع سكني</span>
+                                    <span class="text-xs opacity-80">2024</span>
                                 </div>
-
-                                <div class="relative z-10">
-                                    <!-- تقييم النجوم -->
-                                    <div class="flex gap-1 mb-6">
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                                        </svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                                        </svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                                        </svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                                        </svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                                        </svg>
-                                    </div>
-
-                                    <!-- نص الشهادة -->
-                                    <p class="text-gray-700 leading-relaxed text-lg mb-8">
-                                        "تجربتي مع شركة عطاء للمقاولات كانت أكثر من رائعة. التزامهم بالمواعيد وجودة العمل العالية جعلتني أشعر بالثقة التامة. أنصح الجميع بالتعامل معهم."
-                                    </p>
-
-                                    <!-- معلومات العميل -->
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-secondary to-orange-600 p-0.5">
-                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="أحمد السعيد" class="w-full h-full rounded-full object-cover">
-                                        </div>
-                                        <div>
-                                            <h4 class="font-bold text-primary text-lg">أحمد السعيد</h4>
-                                            <p class="text-gray-500 text-sm">مستثمر عقاري</p>
-                                        </div>
-                                    </div>
+                                <h3 class="text-xl font-bold mb-1">فيلا فاخرة - حي النخيل</h3>
+                                <p class="text-sm opacity-90 mb-3">فيلا بمساحة 800م² بتصميم عصري وتشطيبات راقية</p>
+                                <div class="flex gap-3">
+                                    <a href="#" class="text-sm bg-secondary hover:bg-orange-600 px-4 py-1.5 rounded-full transition">عرض التفاصيل</a>
+                                    <a href="#" class="text-sm border border-white hover:bg-white hover:text-primary px-4 py-1.5 rounded-full transition">معرض الصور</a>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- الشهادة 2 -->
-                        <div class="flex-shrink-0 w-full px-4">
-                            <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 md:p-10 relative overflow-hidden">
-                                <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
-                                <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
-                                
-                                <div class="absolute top-6 right-6 opacity-10">
-                                    <svg class="w-16 h-16 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                    </svg>
-                                </div>
-
-                                <div class="relative z-10">
-                                    <div class="flex gap-1 mb-6">
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                    </div>
-
-                                    <p class="text-gray-700 leading-relaxed text-lg mb-8">
-                                        "أنصح وبشدة بالتعامل مع عطاء للمقاولات. تعامل راقٍ وجودة خيالية في التشطيبات. سلموا في الوقت المحدد وكانوا متعاونين جداً في تعديل التصاميم حسب رغبتنا."
-                                    </p>
-
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-secondary to-orange-600 p-0.5">
-                                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="نورة الحارثي" class="w-full h-full rounded-full object-cover">
-                                        </div>
-                                        <div>
-                                            <h4 class="font-bold text-primary text-lg">نورة الحارثي</h4>
-                                            <p class="text-gray-500 text-sm">صاحبة فيلا سكنية</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- الشهادة 3 -->
-                        <div class="flex-shrink-0 w-full px-4">
-                            <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 md:p-10 relative overflow-hidden">
-                                <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
-                                <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
-                                
-                                <div class="absolute top-6 right-6 opacity-10">
-                                    <svg class="w-16 h-16 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                    </svg>
-                                </div>
-
-                                <div class="relative z-10">
-                                    <div class="flex gap-1 mb-6">
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                    </div>
-
-                                    <p class="text-gray-700 leading-relaxed text-lg mb-8">
-                                        "تعاقدت مع عطاء للمقاولات لبناء منزل أحلامي وكانت النتيجة تفوق توقعاتي. فريق محترف وخبرة عالية في التنفيذ. سأتعامل معهم مرة أخرى بالتأكيد."
-                                    </p>
-
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-secondary to-orange-600 p-0.5">
-                                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="خالد العتيبي" class="w-full h-full rounded-full object-cover">
-                                        </div>
-                                        <div>
-                                            <h4 class="font-bold text-primary text-lg">خالد العتيبي</h4>
-                                            <p class="text-gray-500 text-sm">رجل أعمال</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- الشهادة 4 -->
-                        <div class="flex-shrink-0 w-full px-4">
-                            <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 md:p-10 relative overflow-hidden">
-                                <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
-                                <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
-                                
-                                <div class="absolute top-6 right-6 opacity-10">
-                                    <svg class="w-16 h-16 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                    </svg>
-                                </div>
-
-                                <div class="relative z-10">
-                                    <div class="flex gap-1 mb-6">
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                                    </div>
-
-                                    <p class="text-gray-700 leading-relaxed text-lg mb-8">
-                                        "خدمات استشارية ممتازة وتنفيذ احترافي. فريق عطاء للمقاولات كان متعاوناً ومحترفاً في جميع مراحل المشروع. سعيد جداً بالنتيجة النهائية."
-                                    </p>
-
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-secondary to-orange-600 p-0.5">
-                                            <img src="https://randomuser.me/api/portraits/women/89.jpg" alt="سارة الغامدي" class="w-full h-full rounded-full object-cover">
-                                        </div>
-                                        <div>
-                                            <h4 class="font-bold text-primary text-lg">سارة الغامدي</h4>
-                                            <p class="text-gray-500 text-sm">مهندسة معمارية</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
+                            <i class="ml-1">📸</i> 12 صورة
                         </div>
                     </div>
                 </div>
 
-                <!-- نقاط التنقل (dots) -->
-                <div class="flex justify-center gap-3 mt-8">
-                    <button class="testimonial-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-secondary transition-all duration-300" data-slide="0"></button>
-                    <button class="testimonial-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-secondary transition-all duration-300" data-slide="1"></button>
-                    <button class="testimonial-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-secondary transition-all duration-300" data-slide="2"></button>
-                    <button class="testimonial-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-secondary transition-all duration-300" data-slide="3"></button>
+                <!-- المشروع 2 - تجاري ضخم -->
+                <div class="project-item commercial wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="برج تجاري في جدة" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-secondary text-xs px-2 py-1 rounded-full">مشروع تجاري</span>
+                                    <span class="text-xs opacity-80">2024</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-1">برج الأعمال - جدة</h3>
+                                <p class="text-sm opacity-90 mb-3">برج إداري بـ 25 طابق بأحدث المواصفات العالمية</p>
+                                <div class="flex gap-3">
+                                    <a href="#" class="text-sm bg-secondary hover:bg-orange-600 px-4 py-1.5 rounded-full transition">عرض التفاصيل</a>
+                                    <a href="#" class="text-sm border border-white hover:bg-white hover:text-primary px-4 py-1.5 rounded-full transition">معرض الصور</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
+                            <i class="ml-1">📸</i> 18 صورة
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المشروع 3 - تشطيبات فاخرة -->
+                <div class="project-item finishing wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="تشطيبات داخلية فاخرة" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-secondary text-xs px-2 py-1 rounded-full">تشطيبات وديكور</span>
+                                    <span class="text-xs opacity-80">2024</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-1">قصر الأمير عبدالعزيز</h3>
+                                <p class="text-sm opacity-90 mb-3">تشطيبات فاخرة على الطراز الكلاسيكي الحديث</p>
+                                <div class="flex gap-3">
+                                    <a href="#" class="text-sm bg-secondary hover:bg-orange-600 px-4 py-1.5 rounded-full transition">عرض التفاصيل</a>
+                                    <a href="#" class="text-sm border border-white hover:bg-white hover:text-primary px-4 py-1.5 rounded-full transition">معرض الصور</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
+                            <i class="ml-1">📸</i> 24 صورة
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المشروع 4 - مجمع سكني متكامل -->
+                <div class="project-item residential wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="مجمع سكني في الخبر" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-secondary text-xs px-2 py-1 rounded-full">مشروع سكني</span>
+                                    <span class="text-xs opacity-80">2023</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-1">مجمع الخبر السكني</h3>
+                                <p class="text-sm opacity-90 mb-3">5 أبراج سكنية بمساحات متنوعة وخدمات متكاملة</p>
+                                <div class="flex gap-3">
+                                    <a href="#" class="text-sm bg-secondary hover:bg-orange-600 px-4 py-1.5 rounded-full transition">عرض التفاصيل</a>
+                                    <a href="#" class="text-sm border border-white hover:bg-white hover:text-primary px-4 py-1.5 rounded-full transition">معرض الصور</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
+                            <i class="ml-1">📸</i> 32 صورة
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المشروع 5 - استشارات هندسية -->
+                <div class="project-item consulting wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112c89eaf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="مشروع استشاري" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-secondary text-xs px-2 py-1 rounded-full">استشارات هندسية</span>
+                                    <span class="text-xs opacity-80">2024</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-1">مشروع البحر الأحمر</h3>
+                                <p class="text-sm opacity-90 mb-3">إدارة المشروع والاستشارات الهندسية لمنتجع سياحي</p>
+                                <div class="flex gap-3">
+                                    <a href="#" class="text-sm bg-secondary hover:bg-orange-600 px-4 py-1.5 rounded-full transition">عرض التفاصيل</a>
+                                    <a href="#" class="text-sm border border-white hover:bg-white hover:text-primary px-4 py-1.5 rounded-full transition">معرض الصور</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
+                            <i class="ml-1">📸</i> 15 صورة
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المشروع 6 - مجمع تجاري ضخم -->
+                <div class="project-item commercial wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="مول تجاري" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-secondary text-xs px-2 py-1 rounded-full">مشروع تجاري</span>
+                                    <span class="text-xs opacity-80">2023</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-1">مول الرياض بارك</h3>
+                                <p class="text-sm opacity-90 mb-3">مجمع تجاري بـ 200 محل و 5 صالات سينما</p>
+                                <div class="flex gap-3">
+                                    <a href="#" class="text-sm bg-secondary hover:bg-orange-600 px-4 py-1.5 rounded-full transition">عرض التفاصيل</a>
+                                    <a href="#" class="text-sm border border-white hover:bg-white hover:text-primary px-4 py-1.5 rounded-full transition">معرض الصور</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
+                            <i class="ml-1">📸</i> 28 صورة
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المشروع 7 - تشطيبات راقية -->
+                <div class="project-item finishing wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="ديكورات داخلية" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-secondary text-xs px-2 py-1 rounded-full">تشطيبات وديكور</span>
+                                    <span class="text-xs opacity-80">2024</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-1">شقة نموذجية - لوسيل</h3>
+                                <p class="text-sm opacity-90 mb-3">ديكورات عصرية وتشطيبات فاخرة على أعلى مستوى</p>
+                                <div class="flex gap-3">
+                                    <a href="#" class="text-sm bg-secondary hover:bg-orange-600 px-4 py-1.5 rounded-full transition">عرض التفاصيل</a>
+                                    <a href="#" class="text-sm border border-white hover:bg-white hover:text-primary px-4 py-1.5 rounded-full transition">معرض الصور</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
+                            <i class="ml-1">📸</i> 20 صورة
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المشروع 8 - فيلا سكنية -->
+                <div class="project-item residential wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="فيلا عصرية" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-secondary text-xs px-2 py-1 rounded-full">مشروع سكني</span>
+                                    <span class="text-xs opacity-80">2024</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-1">فيلا العطر - الدمام</h3>
+                                <p class="text-sm opacity-90 mb-3">فيلا عصرية بتصميم فريد ومساحات خضراء</p>
+                                <div class="flex gap-3">
+                                    <a href="#" class="text-sm bg-secondary hover:bg-orange-600 px-4 py-1.5 rounded-full transition">عرض التفاصيل</a>
+                                    <a href="#" class="text-sm border border-white hover:bg-white hover:text-primary px-4 py-1.5 rounded-full transition">معرض الصور</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
+                            <i class="ml-1">📸</i> 16 صورة
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- إحصائيات الثقة -->
-            <div class="mt-16 pt-8 border-t-2 border-gray-200">
+            <!-- إحصائيات المشاريع -->
+            <div class="mt-16 bg-gradient-to-r from-primary via-primary/95 to-primary rounded-3xl p-8 text-white">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="text-center group">
-                        <div class="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
-                        <div class="text-gray-600 text-sm">عميل سعيد</div>
+                    <div class="text-center group cursor-pointer">
+                        <div class="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">250+</div>
+                        <div class="text-sm opacity-90">مشروع مكتمل</div>
                     </div>
-                    <div class="text-center group">
-                        <div class="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform duration-300">98%</div>
-                        <div class="text-gray-600 text-sm">رضا العملاء</div>
+                    <div class="text-center group cursor-pointer">
+                        <div class="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">1.5M+</div>
+                        <div class="text-sm opacity-90">متر مربع منجز</div>
                     </div>
-                    <div class="text-center group">
-                        <div class="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform duration-300">4.9</div>
-                        <div class="text-gray-600 text-sm">تقييم العملاء</div>
+                    <div class="text-center group cursor-pointer">
+                        <div class="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">150+</div>
+                        <div class="text-sm opacity-90">عميل راضي</div>
                     </div>
-                    <div class="text-center group">
-                        <div class="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform duration-300">150+</div>
-                        <div class="text-gray-600 text-sm">توصية</div>
+                    <div class="text-center group cursor-pointer">
+                        <div class="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">98%</div>
+                        <div class="text-sm opacity-90">نسبة الإنجاز</div>
                     </div>
                 </div>
+            </div>
+
+            <!-- زر عرض المزيد -->
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center gap-2 bg-secondary hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <span>اطلب استشارة لمشروعك</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
     <script>
-        // ========== TESTIMONIALS SLIDER ==========
+        // ========== PROJECTS FILTER (فلتر المشاريع) ==========
 document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.getElementById('testimonialSlider');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dots = document.querySelectorAll('.testimonial-dot');
-    const slides = document.querySelectorAll('#testimonialSlider > div');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
     
-    if (!slider || slides.length === 0) return;
+    if (filterButtons.length === 0) return;
     
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    let autoSlideInterval;
-    let isAutoSliding = true;
-    
-    // تحديث موضع السلايدر
-    function updateSlider() {
-        const slideWidth = slides[0].offsetWidth;
-        slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        
-        // تحديث النقاط النشطة
-        dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.add('bg-secondary', 'w-6');
-                dot.classList.remove('bg-gray-300', 'w-2');
-            } else {
-                dot.classList.remove('bg-secondary', 'w-6');
-                dot.classList.add('bg-gray-300', 'w-2');
-            }
-        });
-    }
-    
-    // التبديل إلى الشريحة التالية
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlider();
-        resetAutoSlide();
-    }
-    
-    // التبديل إلى الشريحة السابقة
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateSlider();
-        resetAutoSlide();
-    }
-    
-    // إعادة تعيين السلايدر التلقائي
-    function resetAutoSlide() {
-        if (autoSlideInterval) {
-            clearInterval(autoSlideInterval);
-        }
-        if (isAutoSliding) {
-            autoSlideInterval = setInterval(nextSlide, 5000);
-        }
-    }
-    
-    // إضافة مستمعي الأحداث للأزرار
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    
-    // إضافة مستمعي الأحداث للنقاط
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-            updateSlider();
-            resetAutoSlide();
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // إزالة الـ active من جميع الأزرار
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active', 'bg-secondary', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            
+            // إضافة الـ active للزر الحالي
+            this.classList.add('active', 'bg-secondary', 'text-white');
+            this.classList.remove('bg-gray-200', 'text-gray-700');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            // فلتر المشاريع
+            projectItems.forEach(item => {
+                if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
         });
     });
     
-    // إعادة حساب عرض السلايدر عند تغيير حجم النافذة
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            updateSlider();
-        }, 100);
-    });
-    
-    // بدء السلايدر التلقائي
-    resetAutoSlide();
-    
-    // إيقاف السلايدر التلقائي عند تمرير الماوس
-    const sliderContainer = document.querySelector('#testimonials .overflow-hidden');
-    if (sliderContainer) {
-        sliderContainer.addEventListener('mouseenter', () => {
-            if (autoSlideInterval) {
-                clearInterval(autoSlideInterval);
-                autoSlideInterval = null;
-            }
-        });
+    // إضافة تأثير ظهور تدريجي للمشاريع
+    projectItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.9)';
+        item.style.transition = 'all 0.5s ease';
         
-        sliderContainer.addEventListener('mouseleave', () => {
-            if (!autoSlideInterval && isAutoSliding) {
-                autoSlideInterval = setInterval(nextSlide, 5000);
-            }
-        });
-    }
-    
-    // تحديث الموضع الأولي
-    updateSlider();
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+        }, index * 100);
+    });
 });
     </script>
+    <style>
+        /* تنسيق شبكة المشاريع */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
 
-  <!-- ========== CERTIFICATIONS & BADGES SECTION (الشهادات والاعتمادات) ========== -->
-    <section id="certifications" class="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        <!-- خلفية ديكورية -->
+/* تأثير الظهور */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wow {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+/* تحسين تجربة الموبايل */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-item .group img {
+        height: 250px;
+    }
+}
+
+/* تأثير التكبير عند المرور */
+.project-item {
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+    </style>
+       
+
+<!-- ========== CUSTOMER REVIEWS SECTION (آراء العملاء) - بدون سلايدر ========== -->
+    <section id="reviews" class="py-20 bg-white relative overflow-hidden">
+        <!-- خلفية ديكورية بسيطة -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-20 right-10 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute top-20 left-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
         </div>
 
         <div class="container mx-auto px-6 lg:px-12 relative z-10">
-            <!-- عنوان القسم المتطور -->
-            <div class="text-center mb-16">
+            <!-- عنوان القسم -->
+            <div class="text-center mb-12">
                 <div class="inline-block">
                     <div class="flex items-center justify-center gap-2 mb-3">
                         <div class="w-8 h-px bg-secondary"></div>
-                        <span class="text-secondary font-bold text-lg tracking-wider relative">
-                            الشهادات والاعتمادات
-                            <svg class="absolute -bottom-2 left-0 w-full" height="3" viewBox="0 0 200 3" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 1.5 Q50 4.5 100 1.5 Q150 -1.5 200 1.5" stroke="#f39c12" fill="none" stroke-width="2"/>
-                            </svg>
+                        <span class="text-secondary font-bold text-lg tracking-wider">
+                            آراء عملائنا
                         </span>
                         <div class="w-8 h-px bg-secondary"></div>
                     </div>
                 </div>
-                <h2 class="text-3xl md:text-5xl font-bold text-primary mt-4 mb-4">
-                    شهادات
-                    <span class="text-secondary relative inline-block mx-2">
-                        الجودة والاعتماد
-                        <svg class="absolute -bottom-2 left-0 w-full" height="4" viewBox="0 0 200 4" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 2 Q50 6 100 2 Q150 -2 200 2" stroke="#f39c12" fill="none" stroke-width="2"/>
-                        </svg>
-                    </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mt-4 mb-4">
+                    ماذا يقول
+                    <span class="text-secondary">عملاؤنا عنا</span>
                 </h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-                    نفتخر بحصولنا على أعلى المعايير العالمية والشهادات المهنية التي تؤكد جودة خدماتنا
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    نفخر بثقة عملائنا الذين جربوا خدماتنا وكانوا خير سفراء لنا
                 </p>
             </div>
 
-            <!-- بطاقات الشهادات الرئيسية -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                <!-- شهادة ISO 9001 -->
-                <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-secondary/10 to-transparent rounded-bl-full"></div>
-                    <div class="p-6 text-center">
-                        <div class="relative w-24 h-24 mx-auto mb-4">
-                            <div class="absolute inset-0 bg-secondary/10 rounded-full group-hover:scale-110 transition-transform duration-500"></div>
-                            <div class="relative w-full h-full flex items-center justify-center">
-                                <svg class="w-14 h-14 text-secondary group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z" stroke="currentColor" fill="none" stroke-width="1.5"/>
-                                </svg>
+            <!-- تقييم إجمالي -->
+            <div class="max-w-lg mx-auto mb-12 bg-gray-50 rounded-2xl p-6 text-center">
+                <div class="flex items-center justify-center gap-4 mb-3">
+                    <div class="text-4xl font-bold text-primary">4.9</div>
+                    <div class="flex gap-1">
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm">بناءً على <span class="font-bold text-secondary">500+</span> تقييم حقيقي</p>
+                <p class="text-gray-600 text-sm">معدل رضا العملاء <span class="font-bold text-secondary">98%</span></p>
+            </div>
+
+            <!-- شبكة الآراء (بدون سلايدر) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- الرأي 1 -->
+                <div class="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="أحمد السعيد" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary text-lg">أحمد السعيد</h4>
+                            <div class="flex gap-0.5 mt-1">
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-2">ISO 9001:2024</h3>
-                        <p class="text-gray-500 text-sm mb-3">نظام إدارة الجودة</p>
-                        <div class="inline-block bg-green-50 text-green-600 px-3 py-1 rounded-full text-xs font-semibold">
-                            معتمدة
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-gray-100">
-                            <p class="text-xs text-gray-400">صادرة من: هيئة التقييس الدولية</p>
-                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                        "تجربتي مع شركة عطاء للمقاولات كانت رائعة. التزامهم بالمواعيد وجودة العمل العالية جعلتني أشعر بالثقة التامة. أنصح الجميع بالتعامل معهم."
+                    </p>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xs text-gray-400">منذ 3 أيام</span>
+                        <span class="text-xs text-secondary font-semibold">مشروع فيلا سكنية</span>
                     </div>
                 </div>
 
-                <!-- شهادة ISO 14001 -->
-                <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-secondary/10 to-transparent rounded-bl-full"></div>
-                    <div class="p-6 text-center">
-                        <div class="relative w-24 h-24 mx-auto mb-4">
-                            <div class="absolute inset-0 bg-secondary/10 rounded-full group-hover:scale-110 transition-transform duration-500"></div>
-                            <div class="relative w-full h-full flex items-center justify-center">
-                                <svg class="w-14 h-14 text-secondary group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z" stroke="currentColor" fill="none" stroke-width="1.5"/>
-                                    <circle cx="12" cy="12" r="4" stroke="currentColor" fill="none" stroke-width="1.5"/>
-                                </svg>
+                <!-- الرأي 2 -->
+                <div class="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="نورة الحارثي" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary text-lg">نورة الحارثي</h4>
+                            <div class="flex gap-0.5 mt-1">
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-2">ISO 14001</h3>
-                        <p class="text-gray-500 text-sm mb-3">نظام إدارة البيئة</p>
-                        <div class="inline-block bg-green-50 text-green-600 px-3 py-1 rounded-full text-xs font-semibold">
-                            معتمدة
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-gray-100">
-                            <p class="text-xs text-gray-400">صادرة من: المنظمة الدولية للتوحيد القياسي</p>
-                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                        "أنصح وبشدة بالتعامل مع عطاء للمقاولات. تعامل راقٍ وجودة خيالية في التشطيبات. سلموا في الوقت المحدد وكانوا متعاونين جداً."
+                    </p>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xs text-gray-400">منذ أسبوع</span>
+                        <span class="text-xs text-secondary font-semibold">تشطيبات فاخرة</span>
                     </div>
                 </div>
 
-                <!-- شهادة OHSAS 18001 -->
-                <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-secondary/10 to-transparent rounded-bl-full"></div>
-                    <div class="p-6 text-center">
-                        <div class="relative w-24 h-24 mx-auto mb-4">
-                            <div class="absolute inset-0 bg-secondary/10 rounded-full group-hover:scale-110 transition-transform duration-500"></div>
-                            <div class="relative w-full h-full flex items-center justify-center">
-                                <svg class="w-14 h-14 text-secondary group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z" stroke="currentColor" fill="none" stroke-width="1.5"/>
-                                    <path d="M12 7L14 10L17 10.5L15 13L15.5 16L12 14.5L8.5 16L9 13L7 10.5L10 10L12 7Z" stroke="currentColor" fill="none" stroke-width="1.5"/>
-                                </svg>
+                <!-- الرأي 3 -->
+                <div class="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="خالد العتيبي" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary text-lg">خالد العتيبي</h4>
+                            <div class="flex gap-0.5 mt-1">
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-2">OHSAS 18001</h3>
-                        <p class="text-gray-500 text-sm mb-3">الصحة والسلامة المهنية</p>
-                        <div class="inline-block bg-green-50 text-green-600 px-3 py-1 rounded-full text-xs font-semibold">
-                            معتمدة
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-gray-100">
-                            <p class="text-xs text-gray-400">صادرة من: مجلس السلامة البريطاني</p>
-                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                        "تعاقدت مع عطاء للمقاولات لبناء منزل أحلامي وكانت النتيجة تفوق توقعاتي. فريق محترف وخبرة عالية في التنفيذ. سأتعامل معهم مرة أخرى."
+                    </p>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xs text-gray-400">منذ أسبوعين</span>
+                        <span class="text-xs text-secondary font-semibold">بناء منزل</span>
                     </div>
                 </div>
 
-                <!-- شهادة العملاء -->
-                <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-secondary/10 to-transparent rounded-bl-full"></div>
-                    <div class="p-6 text-center">
-                        <div class="relative w-24 h-24 mx-auto mb-4">
-                            <div class="absolute inset-0 bg-secondary/10 rounded-full group-hover:scale-110 transition-transform duration-500"></div>
-                            <div class="relative w-full h-full flex items-center justify-center">
-                                <svg class="w-14 h-14 text-secondary group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z" stroke="currentColor" fill="none" stroke-width="1.5"/>
-                                    <path d="M12 8V12L15 15" stroke="currentColor" fill="none" stroke-width="1.5"/>
-                                    <circle cx="12" cy="12" r="9" stroke="currentColor" fill="none" stroke-width="1.5"/>
-                                </svg>
+                <!-- الرأي 4 -->
+                <div class="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
+                            <img src="https://randomuser.me/api/portraits/women/89.jpg" alt="سارة الغامدي" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary text-lg">سارة الغامدي</h4>
+                            <div class="flex gap-0.5 mt-1">
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-2">شهادة Trusted</h3>
-                        <p class="text-gray-500 text-sm mb-3">أفضل خدمة عملاء 2024</p>
-                        <div class="inline-block bg-green-50 text-green-600 px-3 py-1 rounded-full text-xs font-semibold">
-                            معتمدة
+                    </div>
+                    <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                        "خدمات استشارية ممتازة وتنفيذ احترافي. فريق عطاء للمقاولات كان متعاوناً ومحترفاً في جميع مراحل المشروع. سعيد جداً بالنتيجة النهائية."
+                    </p>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xs text-gray-400">منذ 3 أسابيع</span>
+                        <span class="text-xs text-secondary font-semibold">استشارات هندسية</span>
+                    </div>
+                </div>
+
+                <!-- الرأي 5 -->
+                <div class="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
+                            <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="محمد القحطاني" class="w-full h-full object-cover">
                         </div>
-                        <div class="mt-4 pt-3 border-t border-gray-100">
-                            <p class="text-xs text-gray-400">صادرة من: منصة Trusted</p>
+                        <div>
+                            <h4 class="font-bold text-primary text-lg">محمد القحطاني</h4>
+                            <div class="flex gap-0.5 mt-1">
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            </div>
                         </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                        "شركة محترمة بكل معنى الكلمة. أسعار مناسبة وجودة عالية وفريق عمل متميز. أنصح الجميع بالتعامل معهم بثقة تامة."
+                    </p>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xs text-gray-400">منذ شهر</span>
+                        <span class="text-xs text-secondary font-semibold">مشروع تجاري</span>
+                    </div>
+                </div>
+
+                <!-- الرأي 6 -->
+                <div class="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="فاطمة الشمري" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary text-lg">فاطمة الشمري</h4>
+                            <div class="flex gap-0.5 mt-1">
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                        "ديكورات رائعة وتشطيبات فاخرة. الفريق كان محترفاً جداً وأنجز العمل في الوقت المحدد وبجودة عالية. شكراً لعطاء للمقاولات."
+                    </p>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xs text-gray-400">منذ شهرين</span>
+                        <span class="text-xs text-secondary font-semibold">ديكورات وتشطيبات</span>
                     </div>
                 </div>
             </div>
 
-            <!-- بطاقات إضافية (عضوية وشراكات) -->
-            <div class="text-center mb-10">
-                <h3 class="text-2xl font-bold text-primary mb-8">عضوية وشراكات معتمدة</h3>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- عضوية 1 -->
-                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-5 flex items-center gap-4 group">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-300">
-                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="font-bold text-primary mb-1">اتحاد المقاولين السعودي</h4>
-                        <p class="text-xs text-gray-500">عضو معتمد منذ 2010</p>
-                    </div>
-                    <div class="text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- عضوية 2 -->
-                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-5 flex items-center gap-4 group">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-300">
-                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="font-bold text-primary mb-1">غرفة الرياض التجارية</h4>
-                        <p class="text-xs text-gray-500">شريك استراتيجي</p>
-                    </div>
-                    <div class="text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- عضوية 3 -->
-                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-5 flex items-center gap-4 group">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-300">
-                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="font-bold text-primary mb-1">الهيئة السعودية للمهندسين</h4>
-                        <p class="text-xs text-gray-500">عضوية مهنية</p>
-                    </div>
-                    <div class="text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <!-- شريط الجوائز والإنجازات -->
-            <div class="mt-16 bg-gradient-to-r from-secondary/10 via-white to-secondary/10 rounded-3xl p-8">
-                <div class="flex flex-wrap justify-center gap-8 items-center">
-                    <div class="text-center">
-                        <div class="w-16 h-16 mx-auto mb-2">
-                            <svg class="w-full h-full text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z"/>
-                            </svg>
-                        </div>
-                        <p class="text-sm font-semibold text-primary">جائزة التميز</p>
-                        <p class="text-xs text-gray-500">2023</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 mx-auto mb-2">
-                            <svg class="w-full h-full text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z"/>
-                            </svg>
-                        </div>
-                        <p class="text-sm font-semibold text-primary">أفضل شركة مقاولات</p>
-                        <p class="text-xs text-gray-500">2024</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 mx-auto mb-2">
-                            <svg class="w-full h-full text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z"/>
-                            </svg>
-                        </div>
-                        <p class="text-sm font-semibold text-primary">جائزة الابتكار</p>
-                        <p class="text-xs text-gray-500">2024</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 mx-auto mb-2">
-                            <svg class="w-full h-full text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z"/>
-                            </svg>
-                        </div>
-                        <p class="text-sm font-semibold text-primary">جائزة السلامة</p>
-                        <p class="text-xs text-gray-500">2024</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- رابطة الشهادات المتحركة (Marquee) -->
-            <div class="mt-12 overflow-hidden">
-                <div class="flex animate-marquee whitespace-nowrap py-4">
-                    <div class="flex gap-12 mx-8">
-                        <span class="text-gray-400 text-sm">✓ ISO 9001:2024</span>
-                        <span class="text-gray-400 text-sm">✓ ISO 14001</span>
-                        <span class="text-gray-400 text-sm">✓ OHSAS 18001</span>
-                        <span class="text-gray-400 text-sm">✓ SABER معتمدة</span>
-                        <span class="text-gray-400 text-sm">✓ نظام الجودة العالمي</span>
-                        <span class="text-gray-400 text-sm">✓ شهادة المطابقة السعودية</span>
-                    </div>
-                    <div class="flex gap-12 mx-8">
-                        <span class="text-gray-400 text-sm">✓ ISO 9001:2024</span>
-                        <span class="text-gray-400 text-sm">✓ ISO 14001</span>
-                        <span class="text-gray-400 text-sm">✓ OHSAS 18001</span>
-                        <span class="text-gray-400 text-sm">✓ SABER معتمدة</span>
-                        <span class="text-gray-400 text-sm">✓ نظام الجودة العالمي</span>
-                        <span class="text-gray-400 text-sm">✓ شهادة المطابقة السعودية</span>
-                    </div>
-                </div>
+            <!-- زر عرض المزيد من الآراء -->
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center gap-2 bg-secondary hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300">
+                    <span>شاركنا رأيك</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
-    <style>
-        /* أنيميشن الماركيه المتحرك */
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.animate-marquee {
-    animation: marquee 20s linear infinite;
-}
-
-.animate-marquee:hover {
-    animation-play-state: paused;
-}
-
-/* تخصيص الشهادات */
-.group:hover .absolute {
-    transform: scale(1.1);
-}
-    </style>
+   
 
     <!-- ========== FOOTER ========== -->
     <!-- ========== FOOTER SECTION مُحسّن ومبدع ========== -->
